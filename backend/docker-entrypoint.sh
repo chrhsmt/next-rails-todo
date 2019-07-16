@@ -42,12 +42,12 @@ until bundle_install; do
   sleep 1
 done
 
-until yarn_install; do
-  sleep 1
-done
+# until yarn_install; do
+#   sleep 1
+# done
 
 if echo "$@" | grep -q 'bundle exec rails s'; then
-  [ -f $APP_PATH/tmp/pids/server.pid ] && rm -v -f $APP_PATH/tmp/pids/server.pid
+  [ -f $APP_HOME/tmp/pids/server.pid ] && rm -v -f $APP_HOME/tmp/pids/server.pid
 fi
 
 if echo "$@" | grep -q 'bundle exec rails resque:work'; then

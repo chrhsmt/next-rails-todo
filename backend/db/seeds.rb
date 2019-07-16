@@ -7,3 +7,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Tenant.create([{name: "uzumaki"}])
+User.create([{name: "test", password: "password", tenant_id: Tenant.first.id}])

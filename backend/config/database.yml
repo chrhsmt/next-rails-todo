@@ -22,9 +22,18 @@ default: &default
   password: <%= ENV.fetch('POSTGRES_PASSWORD') { '' } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# development:
+#   <<: *default
+#   database: backend_development
+
 development:
-  <<: *default
-  database: backend_development
+  adapter: mysql2
+  encoding: utf8
+  host: mysql
+  username: <%= ENV.fetch('MYSQL_USER') { 'uzumaki' } %> 
+  password: <%= ENV.fetch('MYSQL_PASSWORD') { 'uzumaki_pw' } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: uzumaki_local
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

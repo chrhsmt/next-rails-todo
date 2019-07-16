@@ -1,0 +1,3 @@
+[submodule "model_engine"]
+	path = model_engine
+	url = https://github.com/chrhsmt/model_engine.git

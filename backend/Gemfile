@@ -10,11 +10,15 @@ gem "rails", "~> 6.0.0.rc1"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "dotenv-rails", require: "dotenv/rails-now"
-gem "graphql"
+gem "graphql", "~> 1.9.7"
 gem "jwt"
 gem "pg", ">= 0.18", "< 2.0"
+gem 'mysql2'
 gem "puma", "~> 3.11"
 gem "rack-cors"
+
+gem 'activerecord-multi-tenant'
+gem 'model_engine', path: 'model_engine'
 
 group :production do
   gem "heroku-deflater"
@@ -35,7 +39,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "simplecov", require: false
 
-  gem "rubocop", "0.62"
+  gem "rubocop", "0.72"
   gem "rubocop-rails_config"
 
   gem "better_errors"
